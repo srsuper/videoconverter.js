@@ -49,8 +49,8 @@ cd ffmpeg
 
 make clean
 emconfigure ./configure --cc="emcc" --prefix=$(pwd)/../dist --extra-cflags="-I$(pwd)/../dist/include -v" --enable-cross-compile --target-os=none --arch=x86_32 --cpu=generic \
-    --disable-ffplay --disable-ffprobe --disable-ffserver --disable-asm --disable-doc --disable-devices --disable-pthreads --disable-w32threads --disable-network \
-    --disable-hwaccels --disable-parsers --disable-bsfs --disable-debug --disable-protocols --disable-indevs --disable-outdevs --enable-protocol=file \
+    --enable-ffplay --enable-ffprobe --disable-ffserver --disable-asm --disable-doc --disable-devices --disable-pthreads --disable-w32threads --disable-network \
+    --disable-hwaccels --enable-parsers --disable-bsfs --enable-debug --enable-protocols --enable-indevs --disable-outdevs --enable-protocol=file --enable-protocol=librtmp\
     --enable-libvpx --enable-gpl --extra-libs="$(pwd)/../dist/lib/libx264.a $(pwd)/../dist/lib/libvpx.a"
 
 # If we --enable-libx264 there is an error.  Instead just act like it is there, extra-libs seems to work.
