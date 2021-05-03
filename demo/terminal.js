@@ -126,7 +126,7 @@ function initWorker() {
     } else if (message.type == "stdout") {
       outputElement.textContent += message.data + "\n";
     } else if (message.type == "start") {
-      outputElement.textContent = "Worker has received command\n";
+      outputElement.textContent = "Worker รับข้อมูล command\n";
     } else if (message.type == "done") {
       stopRunning();
       var buffers = message.data;
